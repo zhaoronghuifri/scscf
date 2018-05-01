@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<sip-app>
+ 
+	<app-name>CoreSrv</app-name>
+	<display-name>CoreSrv</display-name>
+	<description>CoreSrv</description>
+	
+	<main-servlet>
+		CoreSrv
+	</main-servlet>
+	
+
+	<listener>
+		<listener-class>
+			org.fri.sip.CoreSrv
+		</listener-class>
+	</listener>
+
+
+	<servlet>
+		<servlet-name>CoreSrv</servlet-name>
+		<display-name>CoreSrv</display-name>
+		<description>CoreSrv</description>
+		<servlet-class>
+			org.fri.sip.CoreSrv
+		</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+
+
+ <context-param>
+		<param-name>wsdl</param-name>
+		<param-value>http://tscscf.pmostalk.cn:10080/HssServer/services/ScscfWS</param-value>
+	</context-param>
+    <context-param>
+		<param-name>open_lbc</param-name>
+		<param-value>false</param-value>
+	</context-param>
+	
+	 <context-param>
+		<param-name>version</param-name>
+		<param-value>scscf_1.0.1</param-value>
+	</context-param>
+	
+</sip-app>

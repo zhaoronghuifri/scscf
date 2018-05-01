@@ -1,0 +1,145 @@
+log4j.rootLogger=INFO,E,total
+log4j.addivity.org.apache=true
+
+#########################
+####      Console     ### 
+######################### 
+log4j.appender.stdout =org.apache.log4j.ConsoleAppender
+log4j.appender.stdout.Target =System.out
+log4j.appender.stdout.Threshold =DEBUG
+log4j.appender.stdout.layout =org.apache.log4j.SimpleLayout
+
+
+
+########################
+###      ALERT     ### 
+########################
+log4j.logger.org.fri.log.AlertLog = INFO,alert
+log4j.appender.alert=org.apache.log4j.RollingFileAppender
+log4j.appender.alert.File =  ${catalina.home}/logs/scscf/alert/alert.log 
+log4j.appender.alert.Append = true
+log4j.appender.alert.Threshold = INFO 
+log4j.appender.alert.MaxFileSize=5MB 
+log4j.appender.alert.MaxBackupIndex=10
+log4j.appender.alert.layout = org.apache.log4j.PatternLayout
+log4j.appender.alert.layout.ConversionPattern = [%d{yyyy-MM-dd HH:mm:ss\\} %-5p]  - %m%n  
+
+
+########################
+###      SMS     ### 
+########################
+log4j.logger.org.fri.log.SmsLog = INFO,sms
+log4j.appender.sms=org.apache.log4j.RollingFileAppender
+log4j.appender.sms.File =  ${catalina.home}/logs/scscf/sms/sms.log 
+log4j.appender.sms.Append = true
+log4j.appender.sms.Threshold = INFO 
+log4j.appender.sms.MaxFileSize=5MB 
+log4j.appender.sms.MaxBackupIndex=10
+log4j.appender.sms.layout = org.apache.log4j.PatternLayout
+log4j.appender.sms.layout.ConversionPattern = [%d{yyyy-MM-dd HH:mm:ss\} %-5p]  - %m%n  
+
+########################
+###  SCSCF  Exceptions    ### 
+########################
+log4j.logger.org.fri.util.utilMethods = INFO,ex
+log4j.appender.ex = org.apache.log4j.RollingFileAppender
+log4j.appender.ex.File =${catalina.home}/logs/scscf/error/excpt.log 
+log4j.appender.ex.Append = true
+log4j.appender.ex.Threshold = INFO
+log4j.appender.ex.MaxFileSize=5MB 
+log4j.appender.ex.MaxBackupIndex=20
+log4j.appender.ex.layout = org.apache.log4j.PatternLayout
+log4j.appender.ex.layout.ConversionPattern = [%d{yyyy-MM-dd HH:mm:ss\} %-5p]  -%-4r   %c %x - %m%n  
+
+
+########################
+###     Error   ### 
+########################
+log4j.appender.E = org.apache.log4j.RollingFileAppender
+log4j.appender.E.File =${catalina.home}/logs/scscf/error/error.log 
+log4j.appender.E.Append = true
+log4j.appender.E.Threshold = ERROR 
+log4j.appender.E.MaxFileSize=5MB 
+log4j.appender.E.MaxBackupIndex=10
+log4j.appender.E.layout = org.apache.log4j.PatternLayout
+log4j.appender.E.layout.ConversionPattern = [%d{yyyy-MM-dd HH:mm:ss\} %-5p]  -%-4r  {%c:%L} - %m%n  
+
+########################
+###     Init_Log     ###
+########################
+log4j.logger.org.fri.log.InitLog=INFO,INIT
+log4j.appender.INIT = org.apache.log4j.RollingFileAppender
+log4j.appender.INIT.File = ${catalina.home}/logs/scscf/init/init.log
+log4j.appender.INIT.Append = true
+log4j.appender.INIT.Threshold = INFO
+log4j.appender.INIT.MaxFileSize=5MB 
+log4j.appender.INIT.MaxBackupIndex=10
+log4j.appender.INIT.layout = org.apache.log4j.PatternLayout
+log4j.appender.INIT.layout.ConversionPattern =[%d{yyyy-MM-dd HH:mm:ss\} %-5p] - %m%n
+
+########################
+###      total    ###
+########################
+log4j.logger.org.fri.log.TotalLog=INFO,total
+log4j.appender.total=org.apache.log4j.RollingFileAppender
+log4j.appender.total.Threshold=INFO
+log4j.appender.total.File= ${catalina.home}/logs/scscf/total/total.log
+log4j.appender.total.Append=true
+log4j.appender.total.MaxFileSize=5MB
+log4j.appender.total.MaxBackupIndex=20
+log4j.appender.total.layout=org.apache.log4j.PatternLayout
+log4j.appender.total.layout.ConversionPattern=[%d{yyyy-MM-dd HH:mm:ss\} %-5p]  -%m%n
+
+########################
+###       PDM      ###
+########################
+log4j.logger.org.fri.pdm.PdmKek=INFO,kek
+log4j.appender.kek = org.apache.log4j.RollingFileAppender
+log4j.appender.kek.File = ${catalina.home}/logs/scscf/pdm/token.log
+log4j.appender.kek.Append = true
+log4j.appender.kek.Threshold = INFO
+log4j.appender.kek.MaxFileSize=5MB
+log4j.appender.kek.MaxBackupIndex=10
+log4j.appender.kek.layout = org.apache.log4j.PatternLayout
+log4j.appender.kek.layout.ConversionPattern =[%d{yyyy-MM-dd HH:mm:ss\} %-5p]{%c:%L}  -%m%n
+
+
+########################
+###  registrar   ###
+########################
+log4j.logger.org.fri.sip.Registrar =INFO,RE
+log4j.appender.RE = org.apache.log4j.RollingFileAppender
+log4j.appender.RE.File = ${catalina.home}/logs/scscf/ue/ue.log
+log4j.appender.RE.Append = true
+log4j.appender.RE.Threshold = INFO
+log4j.appender.RE.MaxFileSize=5MB
+log4j.appender.RE.MaxBackupIndex=20
+log4j.appender.RE.layout = org.apache.log4j.PatternLayout
+log4j.appender.RE.layout.ConversionPattern =[%d{yyyy-MM-dd HH:mm:ss\} %-5p]{%c:%L}  - %m%n
+
+
+########################
+###   Register debug ###
+########################
+log4j.logger.org.fri.log.RegLog =INFO,L
+log4j.appender.L = org.apache.log4j.RollingFileAppender
+log4j.appender.L.File = ${catalina.home}/logs/scscf/sip/register.log
+log4j.appender.L.Append = true
+log4j.appender.L.Threshold = INFO
+log4j.appender.L.MaxFileSize=5MB
+log4j.appender.L.MaxBackupIndex=100
+log4j.appender.L.layout = org.apache.log4j.PatternLayout
+log4j.appender.L.layout.ConversionPattern =[%d{yyyy-MM-dd HH:mm:ss\} %-5p]  - %m%n
+
+########################
+###   Invite debug   ###
+########################
+log4j.logger.org.fri.log.InvLog =INFO,I
+log4j.appender.I= org.apache.log4j.RollingFileAppender
+log4j.appender.I.File = ${catalina.home}/logs/scscf/sip/invite.log
+log4j.appender.I.Append = true
+log4j.appender.I.Threshold = INFO
+log4j.appender.I.MaxFileSize=5MB
+log4j.appender.I.MaxBackupIndex=100
+log4j.appender.I.layout = org.apache.log4j.PatternLayout
+log4j.appender.I.layout.ConversionPattern =[%d{yyyy-MM-dd HH:mm:ss\} %-5p]  - %m%n
